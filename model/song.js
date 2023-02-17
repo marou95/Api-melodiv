@@ -26,7 +26,7 @@ module.exports = function (app) {
                 type: String,
                 required: true,
                 unique: false,
-            },m
+            },
 
 
 
