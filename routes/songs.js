@@ -3,15 +3,15 @@ var router = express.Router();
 var bodyParser = require('body-parser').json();
 
 module.exports = function (app) {
-    router.get('/',
+    app.get('/',
         app.actions.songs.list
     );
 
-    router.get('/:songId',
+    app.get('/:songId',
         app.actions.songs.getById
     );
 
-    router.post('/',
+    app.post('/',
         bodyParser,
         app.actions.songs.create
     );
@@ -21,11 +21,11 @@ module.exports = function (app) {
     //     app.actions.songs.update
     // );
 
-    router.delete('/',
+    app.delete('/',
         app.actions.songs.deleteAll
     );
 
-    router.delete('/:songId',
+    app.delete('/:songId',
         app.actions.songs.delete
     );
 
