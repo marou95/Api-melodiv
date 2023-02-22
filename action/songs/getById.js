@@ -3,7 +3,7 @@ module.exports = function (app) {
         var song =  app.model.song;
         song.findById(req.params.songId ,function (err,result) {
             if(err){
-                return res.status(500).send({error: err});
+                return res.status(404).send({error: err});
             }
             else{
                 if (result) {
